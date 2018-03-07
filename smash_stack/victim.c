@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void bar() { print("Are you watching closely?\n"); }
+void bar() { printf("Are you watching closely?\n"); }
 
 int foo(const char *buff1) {
   unsigned int a = 0xbeef;
