@@ -9,7 +9,7 @@ clean:
 	rm -rf *.o
 
 victim: victim.o
-	$(CC) $(CFLAGS) victim.o -o q1
+	$(CC) $(CFLAGS) victim.o -o victim
 
 %.o: %.c
 	$(CC) $(CFLAGS) $< -c -o $@
