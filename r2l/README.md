@@ -17,3 +17,5 @@ Say we would like to invoke the following line:
 ```c
 system("/bin/sh")
 ```
+
+Bonus: can you exit gracefully from the shell ?
