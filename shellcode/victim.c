@@ -1,10 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
+char code[] = "<PASTE YOUR SHELLCODE HERE>";
 
-char shellcode[] = "<THE ACTUAL SHELL CODE COMES HERE>";
-
-int main() {
-  void (*f)() = (void (*)())shellcode;
-  f();
+int main(int argc, char **argv) {
+  int (*func)();
+  func = (int (*)())code;
+  (int)(*func)();
   return 0;
 }

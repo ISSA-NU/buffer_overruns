@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-g -O0 -fPIC -fno-builtin -z execstack -fno-stack-protector
+CFLAGS=-fno-stack-protector -z execstack
 
 all: check
 
