@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void shell() {
+void bad_code() {
   system("/bin/sh");
   exit(0);
 }
