@@ -1,20 +1,16 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
-void bar() {
-    printf("Part-1 Completed.\nNext task is to execute /bin/sh command by calling system() function by exploiting the buffer overflow vulnerability in this code.\n");
-    exit(0);
-}
-
-void foo() {
-    char buff[30];
-    int i;
-    i = read(0, buff, 200);
+void foo(int a) {
+  char buff[30];
+  int i = a + 1;
+  printf("Foo has argument %d\n", a);
+  i = read(0, buff, i);
 }
 
 int main(void) {
-    foo();
-    return 0;
+  foo(199);
+  return 0;
 }

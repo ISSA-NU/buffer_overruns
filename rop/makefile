@@ -14,6 +14,9 @@ victim: victim.o
 check: clean victim
 	./victim
 
+gdb: clean victim
+	gdb ./victim
+
 %.o: %.c
 		$(CC) $(CFLAGS) $< -c -o $@
 

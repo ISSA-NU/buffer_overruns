@@ -2,6 +2,8 @@
 
 Smash the stack by manipulating the buffer overflow vulnerability.
 
+NOTE: Please perform this exploit on 64 bit system.
+
 ## Part 1 - Control Flow
 
 By manipulating the input, can you change the value of variable **a** in function `foo` to make it print something?
