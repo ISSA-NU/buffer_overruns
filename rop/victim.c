@@ -3,14 +3,12 @@
 #include <string.h>
 #include <unistd.h>
 
-void foo(int a) {
+void foo() {
   char buff[30];
-  int i = a + 1;
-  printf("Foo has argument %d\n", a);
-  i = read(0, buff, i);
+  int i = read(0, buff, 200);
 }
 
 int main(void) {
-  foo(199);
+  foo();
   return 0;
 }
