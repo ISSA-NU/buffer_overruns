@@ -8,7 +8,7 @@ void bad_code() {
 
 int main(int argc, char *argv[]) {
   int i = 0;
-  char buf[256];
+  char buf[20];
   strcpy(buf, argv[1]);
   printf("%s\n", buf);
   return 0;

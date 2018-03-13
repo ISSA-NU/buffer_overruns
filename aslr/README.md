@@ -10,4 +10,20 @@ NOTE: Please execute this attack set on the 32 bit system.
 
 ## Part 1 - Return-to-PLT
 
+Turn on ALSR by
+
+```bash
+echo 2 | sudo tee /proc/sys/kernel/randomize_va_space
+```
+
+Now, try to invoke a `system` call by manipulating the vulnerable buffer.
+
 ## Part 2 - Brute Force
+
+Turn on ALSR using the same command specified above.
+
+Now, try to execute effectively
+
+```c
+system('/bin/sh');
+```

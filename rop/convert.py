@@ -1,4 +1,4 @@
-from struct import *
+from struct import pack
 
 FMT_LE_ULL = '<Q'   # unsigned long long, little-endian
 offset = 100        # distance between buff and RET
