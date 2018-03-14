@@ -25,5 +25,5 @@ Turn on ALSR using the same command specified above.
 Now, try to execute effectively
 
 ```c
-system('/bin/sh');
+system('sh');  // also brings up a shell
 ```

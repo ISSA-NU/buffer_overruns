@@ -6,7 +6,7 @@ all: check
 default: check
 
 clean:
-	rm -rf *.o
+	rm -rf *.o peda-session-* victim_bf victim_r2p
 
 victim_r2p: victim_r2p.o
 	$(CC) $(CFLAGS) $< -o $@

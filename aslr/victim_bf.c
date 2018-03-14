@@ -2,7 +2,7 @@
 #include <string.h>
 
 int main(int argc, char *argv[]) {
-  char buf[256];
+  char buf[20];
   strcpy(buf, argv[1]);
   printf("%s\n", buf);
   fflush(stdout);
